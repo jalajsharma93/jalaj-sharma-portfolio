@@ -82,8 +82,9 @@ body {
   position: absolute;
   top: 70px;
   left: 0;
-  width: 100%;
+  width: 50%; /* Adjust the width as needed */
   z-index: 1;
+  transform: translateX(-50%);
 }
 
 .mobile-navigation.active {
@@ -113,7 +114,7 @@ body {
   }
 
   .navigation {
-    display: none; /* Change to display: flex; */
+    display: none;
   }
 
   .main {
@@ -124,6 +125,16 @@ body {
     display: flex;
   }
 }
+
+/* Main Content Styling */
+.main {
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Footer Styling */
 .footer {
   background-color: #333;
   color: white;
@@ -150,5 +161,74 @@ body {
 }
 
 .button-primary:hover {
-  background-color: #0056b3;
+  background-color: hsl(210, 22%, 85%);
+}
+
+/* Button Style for Resume Download */
+.resume-button {
+  background-color: #e3e8ee;
+  color: rgb(7, 0, 0);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 3px;
+
+  transition: background-color 0.3s ease-in-out;
+  text-decoration: none; /* Remove default link underline */
+}
+
+.resume-button:hover {
+  background-color: #77767a;
+}
+/* ... (previous styles) */
+
+/* Mobile Navigation Styles */
+.mobile-navigation {
+  display: none;
+  background-color: #333;
+  position: absolute;
+  top: 70px;
+  right: 0; /* Shift to the right */
+  width: 50%; /* Adjust the width as needed */
+  z-index: 1;
+  transform: translateX(50%);
+}
+
+.mobile-navigation.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobile-navigation button {
+  background-color: #555;
+  color: white;
+  border: none;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.mobile-navigation button:hover {
+  background-color: #777;
+}
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .main {
+    margin-top: 70px;
+  }
+
+  .app.mobile-open .navigation {
+    display: flex;
+  }
 }

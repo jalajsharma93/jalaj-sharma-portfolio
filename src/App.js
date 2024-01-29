@@ -33,15 +33,11 @@ const App = () => {
     <div className={`app ${mobileMenuOpen ? 'mobile-open' : ''}`}>
       <header className="header">
         <h1 className="logo">Jalaj Sharma</h1>
-
-        {/* Hamburger Menu Icon */}
         <div className={`hamburger-menu ${mobileMenuOpen ? 'open' : ''}`} onClick={toggleMobileMenu}>
           <div></div>
           <div></div>
           <div></div>
         </div>
-
-        {/* Navigation */}
         <nav className={`navigation ${mobileMenuOpen ? 'mobile-navigation' : ''}`}>
           {navLinks.map((link) => (
             <button
@@ -66,7 +62,6 @@ const App = () => {
       </main>
 
       <footer className="footer">
-        {/* Add social media icons and additional contact information */}
         <div className="social-icons">
           <a href="https://www.linkedin.com/in/j-sharma93/" target="_blank" rel="noopener noreferrer">
             <img src="/images/linkedin-icon.png" alt="LinkedIn" className="footer-icon" />
@@ -75,9 +70,14 @@ const App = () => {
             <img src="/images/github-icon.png" alt="GitHub" className="footer-icon" />
           </a>
         </div>
+
+        {/* Use the resume-button class for the download link */}
+        <a href="/JalajSharmaJan2024.pdf" download className="resume-button">
+          Download Resume
+        </a>
       </footer>
     </div>
   );
-};
+}
 
 export default App;
